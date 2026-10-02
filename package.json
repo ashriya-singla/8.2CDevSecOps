@@ -12,7 +12,9 @@
     "start": "NODE_OPTIONS=--openssl-legacy-provider node app.js",
     "build": "browserify -r jquery > public/js/bundle.js",
     "cleanup": "mongo express-todo --eval 'db.todos.remove({});'",
-    "test": "snyk test"
+    "test": "snyk test",
+    "test:unit": "node --test tests/assignment-utils.test.cjs",
+    "coverage": "mkdir -p coverage && node --test --experimental-test-coverage --test-coverage-include=utils.js --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=coverage/lcov.info tests/assignment-utils.test.cjs"
   },
   "dependencies": {
     "adm-zip": "0.4.7",
