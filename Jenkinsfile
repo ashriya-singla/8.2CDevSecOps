@@ -3,7 +3,7 @@ pipeline {
     options { skipDefaultCheckout(true); timestamps(); disableConcurrentBuilds() }
     triggers { pollSCM('H/2 * * * *') }
     parameters {
-        string(name: 'NODE_BIN', defaultValue: '/Users/siddhantsharma/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin', description: 'Node.js and npm directory on this Jenkins agent')
+        string(name: 'NODE_BIN', defaultValue: '/Users/siddhantsharma/Documents/Codex/2026-10-03/thi/work/tools/bin', description: 'Node.js and npm directory on this Jenkins agent')
         booleanParam(name: 'RUN_SONARCLOUD', defaultValue: false, description: 'Enable after configuring project and SONAR_TOKEN credential')
         string(name: 'SONAR_PROJECT_KEY', defaultValue: '', description: 'Actual SonarCloud project key')
         string(name: 'SONAR_ORGANIZATION', defaultValue: '', description: 'Actual SonarCloud organization key')
